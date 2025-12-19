@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table id="datatable" class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Acciones</th>
+            <th>Nombre</th>
+            <th>Actualizado</th>
+        </tr>
+        </thead>
+    </table>
+
+{% endblock %}
+
+
+{% block extra_js %}
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{% url 'materials_datatable' %}",
+                order: [[0, "desc"]],
+                columnDefs: [
+                    {orderable: false, targets: 1},
+                    {searchable: false, targets: 1}
+                ]
+            });
+        });
+    </script>
+{% endblock %}

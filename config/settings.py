@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # MY APPS
     'core.apps.CoreConfig',
     'users.apps.UsersConfig',
+    'materials.apps.MaterialsConfig',
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    "core.middleware.UserPermissionsMiddleware",
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

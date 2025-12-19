@@ -76,16 +76,16 @@
             <p class="login-box-msg">Sign in to start your session</p>
 
             <!-- Asumiendo que tienes una vista de login llamada 'login_submit' -->
-            <form action="{% url 'login_submit' %}" method="post">
+            <form action="" method="post">
                 {% csrf_token %}
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email" name="email"/>
+                    {{ form.username }}
                     <div class="input-group-text">
                         <span class="bi bi-envelope"></span>
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" name="password"/>
+                    {{ form.password }}
                     <div class="input-group-text">
                         <span class="bi bi-lock-fill"></span>
                     </div>
@@ -113,10 +113,10 @@
             <div class="social-auth-links text-center mb-3 d-grid gap-2">
                 <p>- OR -</p>
                 <!-- Asumiendo que tienes vistas para autenticación social -->
-                <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary">
+                <a href="" class="btn btn-primary">
                     <i class="bi bi-facebook me-2"></i> Sign in using Facebook
                 </a>
-                <a href="{% url 'social:begin' 'google' %}" class="btn btn-danger">
+                <a href="" class="btn btn-danger">
                     <i class="bi bi-google me-2"></i> Sign in using Google+
                 </a>
             </div>
@@ -124,11 +124,11 @@
 
             <p class="mb-1">
                 <!-- Asumiendo que tienes una vista 'password_reset' -->
-                <a href="{% url 'password_reset' %}">I forgot my password</a>
+                <a href="">I forgot my password</a>
             </p>
             <p class="mb-0">
                 <!-- Asumiendo que tienes una vista 'register' -->
-                <a href="{% url 'register' %}" class="text-center"> Register a new membership </a>
+                <a href="" class="text-center"> Register a new membership </a>
             </p>
         </div>
         <!-- /.login-card-body -->

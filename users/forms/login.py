@@ -20,7 +20,7 @@ class LoginForm(AuthenticationForm):
         widget=forms.PasswordInput(
             attrs={
                 'class': 'form-control',
-                'class': 'Escribir su contraseña'
+                'placeholder': 'Escribir su contraseña'
             }
         )
     )
