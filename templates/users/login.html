@@ -78,6 +78,16 @@
             <!-- Asumiendo que tienes una vista de login llamada 'login_submit' -->
             <form action="" method="post">
                 {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
                 <div class="input-group mb-3">
                     {{ form.username }}
                     <div class="input-group-text">

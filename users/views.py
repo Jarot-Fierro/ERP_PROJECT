@@ -19,8 +19,8 @@ def login_view(request):
                 login(request, user)
                 return redirect('dashboard')
 
-            else:
-                messages.error(request, 'Credenciales Invalidas')
+        else:
+            messages.error(request, 'Credenciales Invalidas')
 
     else:
         form = LoginForm()

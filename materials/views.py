@@ -12,5 +12,19 @@ class MaterialListView(LoginRequiredMixin, TemplateView):
 class MaterialDataTableView(BaseDataTableView):
     model = Material
     permission_module = "materials"
-    columns = ["name", "updated_at"]
-    search_fields = ["name"]
+
+    # Columnas que se mostrarán en la tabla (en orden)
+    columns = ["name", "status", "updated_at"]
+
+    # Campos por los que se puede buscar
+    search_fields = ["name", "updated_at"]
+
+    # Configuración de ordenamiento
+    default_order_column = 'name'
+    default_order_direction = 'asc'
+    order_columns_map = {
+        0: 'id',  # ID
+        2: 'name',  # Nombre
+        3: 'status',  # Estado
+        4: 'updated_at'  # Actualizado
+    }
